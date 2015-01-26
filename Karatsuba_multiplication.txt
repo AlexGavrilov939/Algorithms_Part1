@@ -1,0 +1,35 @@
+x = 5678
+y = 1234
+
+=> a = 56
+   b = 78
+   c = 12
+   d = 34
+
+Step 1:	a*c = 672
+Step 2: b*d = 2652
+Step 3: (a+b)(c+d) = 134*46 = 6164
+Step 4: [3] - [2] - [1] = 2840
+Step 5:
+	
+	6720000 ([1] + 4 zeros)
+	   2652 ([2])
+	 284000 ([1] + 2 zeros)
+	-------
+	7006652
+
+
+From Recursive Algorithm
+
+WHERE
+x = pow(10, n/2)*a + b;
+y = pow(10, n/2)*c + d;
+
+x*y = (pow(10, n/2)*a + b) * (pow(10, n/2) + d) = 
+= (pow(10, n)*a*c + pow(10, n/2)*(a*d + b*c) + b*d)
+
+Step 1: a*c
+Step 2: b*d
+Step 3: (a+b)(c+d) = a*c + d*d + b*c + b*d
+Step 4 (Gauss trick): [3] - [2] - [1] = a*d + a*c
+Upshot: Only need 3 recursive multiplications (and some additionals)
